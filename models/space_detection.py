@@ -5,7 +5,7 @@ with open("ParkPos", "rb") as f:
     pos_list = pickle.load(f)
 
 slot_history = {}
-THRESHOLD = 870
+THRESHOLD = 500
 
 width, height = 80, 30
 
@@ -24,8 +24,8 @@ def check_space(image_pro, img):
         # simpan history
         slot_history[i].append(count)
 
-        # ambil 20 frame terakhir
-        if len(slot_history[i]) > 20:
+        # ambil 1200 frame terakhir
+        if len(slot_history[i]) > 1200:
             slot_history[i].pop(0)
 
         # average
